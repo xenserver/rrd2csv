@@ -68,7 +68,7 @@ module XAPI = struct
 	let rpc xml =
 		let open Xmlrpc_client in
 		let http = xmlrpc ~version:"1.0" "/" in
-		XMLRPC_protocol.rpc ~srcstr:"rrd2csv" ~dststr:"xapi" 
+		XML_protocol.rpc ~srcstr:"rrd2csv" ~dststr:"xapi"
 			~transport:(Unix (Filename.concat Fhs.vardir "xapi")) ~http xml
 
 	(* execute f within an active session *)
